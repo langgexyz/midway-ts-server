@@ -1,0 +1,40 @@
+  console.log
+    🧪 开始测试套件
+
+      at Object.<anonymous> (test/setup.ts:10:11)
+
+  console.log
+    ✅ 测试套件完成
+
+      at Object.<anonymous> (test/setup.ts:14:11)
+
+  console.log
+    🧪 开始测试套件
+
+      at Object.<anonymous> (test/setup.ts:10:11)
+
+  console.log
+    ✅ 测试套件完成
+
+      at Object.<anonymous> (test/setup.ts:14:11)
+
+  console.log
+    🧪 开始测试套件
+
+      at Object.<anonymous> (test/setup.ts:10:11)
+
+  console.log
+    ✅ 测试套件完成
+
+      at Object.<anonymous> (test/setup.ts:14:11)
+
+  console.log
+    🧪 开始测试套件
+
+      at Object.<anonymous> (test/setup.ts:10:11)
+
+  console.log
+    ✅ 测试套件完成
+
+      at Object.<anonymous> (test/setup.ts:14:11)
+

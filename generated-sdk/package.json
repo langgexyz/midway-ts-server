@@ -1,0 +1,18 @@
+{
+  "name": "generated-api-client",
+  "version": "1.0.0",
+  "description": "Generated API client from OpenAPI specification",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "ts-sdk-client": "file:../../ts-sdk-client"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

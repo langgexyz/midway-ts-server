@@ -1,0 +1,9 @@
+
+> midway-ts-server@1.0.0 start
+> node ./dist/bootstrap.js
+
+🔧 MidwayJS 容器初始化完成
+🧪 系统性测试服务已就绪
+2025-09-11 11:30:13.379 INFO 97501 [midway:bootstrap] current app started
+🚀 MidwayJS 测试服务启动成功
+📊 访问 http://localhost:7001 开始系统测试
