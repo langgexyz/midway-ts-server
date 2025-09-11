@@ -21,3 +21,7 @@
 📤 [GET] /swagger-ui/json - 处理完成 (0ms) status: 200
 📥 [GET] /swagger-ui/json - 开始处理
 📤 [GET] /swagger-ui/json - 处理完成 (3ms) status: 200
+📥 [GET] /api/health - 开始处理
+📤 [GET] /api/health - 处理完成 (4ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (2ms) status: 200

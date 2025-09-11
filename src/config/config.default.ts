@@ -21,6 +21,21 @@ export default {
     }
   },
 
+  // Swagger配置 - 使用内置组件，真正基于注解生成
+  swagger: {
+    title: 'Gateway 测试 API',
+    description: '完全基于@ApiOperation、@ApiQuery等注解自动生成的API文档',
+    version: '1.0.0',
+    contact: {
+      name: 'Gateway Team',
+      email: 'team@gateway.com'
+    },
+    license: {
+      name: 'MIT',
+      url: 'https://opensource.org/licenses/MIT'
+    }
+  },
+
   // 测试配置
   testConfig: {
     // 启用详细日志

@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 7
+  },
+  "auditLog": "logs/.audit/.135cd44aaaa770e277c2b3250538a1b9b9c9a91a-audit.json",
+  "files": [
+    {
+      "date": 1757575260381,
+      "name": "logs/midway-app.log.2025-09-11",
+      "hash": "b33a65707c585db1e23578ef27f63e5a"
+    }
+  ],
+  "hashType": "md5"
+}

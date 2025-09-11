@@ -70,8 +70,8 @@ start_service() {
     if ps -p "$PID" > /dev/null 2>&1; then
         echo -e "${GREEN}✅ 服务启动成功 (PID: $PID)${NC}"
         echo -e "📊 服务地址: ${BLUE}http://localhost:7001${NC}"
-        echo -e "📚 Swagger文档: ${BLUE}http://localhost:7001/swagger-ui${NC}"
-        echo -e "📄 OpenAPI规范: ${BLUE}http://localhost:7001/swagger-ui/json${NC}"
+        echo -e "📚 Swagger文档: ${BLUE}http://localhost:7001/swagger-ui/index.html${NC}"
+        echo -e "📄 OpenAPI规范: ${BLUE}http://localhost:7001/swagger-ui/index.json${NC}"
         echo -e "📝 日志文件: $LOG_FILE"
         echo -e "${YELLOW}💡 使用 'tail -f $LOG_FILE' 查看实时日志${NC}"
     else
