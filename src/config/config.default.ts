@@ -3,33 +3,33 @@ import { MidwayConfig } from '@midwayjs/core';
 export default {
   // use for cookie sign key, should change to your own and keep security
   keys: '1640995200_7110',
+  
+  // 服务器配置
   koa: {
     port: 7001,
+    hostname: '0.0.0.0', // 允许外部访问
   },
-  swagger: {
-    enable: true,
-    title: 'Gateway 测试 API',
-    description: '用于测试 SDK 生成和网关转发的 RESTful API',  
-    version: '1.0.0',
-    contact: {
-      name: 'Gateway Team',
-      email: 'team@gateway.com'
-    },
-    license: {
-      name: 'MIT',
-      url: 'https://opensource.org/licenses/MIT'
-    },
-    servers: [
-      {
-        url: 'http://localhost:7001',
-        description: '开发环境'
-      }
-    ],
-    tags: [
-      {
-        name: 'API',
-        description: 'RESTful API 测试接口'  
-      }
-    ],
+
+  // 日志配置
+  midwayLogger: {
+    default: {
+      level: 'info',
+      consoleLevel: 'info',
+      dir: './logs',
+      maxFiles: '7d',
+      maxSize: '10m'
+    }
+  },
+
+  // 测试配置
+  testConfig: {
+    // 启用详细日志
+    enableVerboseLog: true,
+    // 自动启动依赖服务
+    autoStartServices: true,
+    // 测试超时时间（毫秒）
+    testTimeout: 30000,
+    // 并发测试数量
+    concurrentTests: 3
   }
 } as MidwayConfig;

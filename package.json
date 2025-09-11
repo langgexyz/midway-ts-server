@@ -13,6 +13,8 @@
     "ci": "npm run cov",
     "build": "midway-bin build -c",
     "start": "node ./dist/bootstrap.js",
+    "start:dev": "./scripts/start.sh",
+    "stop": "./scripts/stop.sh",
     "clean": "midway-bin clean",
     "test:all": "npm run test:go-server && npm run test:ts-sdk && npm run test:client && npm run test:generator && npm run test:integration",
     "test:go-server": "npm run test -- --grep \"Gateway Go Server\"",
