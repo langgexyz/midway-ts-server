@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 7
+  },
+  "auditLog": "/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/logs/midway-ts-server/.audit/.05a3f5c2e3885a07bd9f75d89a01fa9f3307fffe-audit.json",
+  "files": [
+    {
+      "date": 1757573580301,
+      "name": "/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/logs/midway-ts-server/midway-app.log.2025-09-11",
+      "hash": "7ebf56482842f2bbd993975676704c18"
+    }
+  ],
+  "hashType": "md5"
+}

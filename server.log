@@ -1,0 +1,23 @@
+🔧 MidwayJS 容器初始化完成
+🧪 系统性测试服务已就绪
+📚 Swagger 文档地址:
+   📄 JSON 规范: http://localhost:7001/swagger-ui/json
+   🌐 UI 界面: http://localhost:7001/swagger-ui
+   📖 API 文档: http://localhost:7001/swagger
+2025-09-11 15:14:12.323 INFO 47037 [midway:bootstrap] current app started
+🚀 MidwayJS 测试服务启动成功
+📊 访问 http://localhost:7001 开始系统测试
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (3ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (1ms) status: 200
+📥 [HEAD] /swagger-ui - 开始处理
+📤 [HEAD] /swagger-ui - 处理完成 (0ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (0ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (2ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (0ms) status: 200
+📥 [GET] /swagger-ui/json - 开始处理
+📤 [GET] /swagger-ui/json - 处理完成 (3ms) status: 200

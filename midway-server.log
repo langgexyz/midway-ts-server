@@ -1,0 +1,331 @@
+
+> midway-ts-server@1.0.0 start /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server
+> node ./dist/bootstrap.js
+
+🔧 MidwayJS 容器初始化完成
+🧪 系统性测试服务已就绪
+2025-09-11 14:38:14.441 INFO 28240 [midway:bootstrap] current app started
+🚀 MidwayJS 测试服务启动成功
+📊 访问 http://localhost:7001 开始系统测试
+📥 [GET] /openapi.json - 开始处理
+❌ 全局错误捕获: NotFoundError: /openapi.json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /openapi.json - 开始处理
+❌ 全局错误捕获: NotFoundError: /openapi.json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /openapi.json - 开始处理
+❌ 全局错误捕获: NotFoundError: /openapi.json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /api-docs - 开始处理
+❌ 全局错误捕获: NotFoundError: /api-docs Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger.json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger.json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /docs/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /docs/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] / - 开始处理
+❌ 全局错误捕获: NotFoundError: / Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /api-json - 开始处理
+❌ 全局错误捕获: NotFoundError: /api-json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /doc - 开始处理
+❌ 全局错误捕获: NotFoundError: /doc Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /api/health - 开始处理
+📤 [GET] /api/health - 处理完成 (2ms) status: 200
+📥 [GET] /swagger-ui - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [HEAD] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [HEAD] /swagger-ui - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [HEAD] /swagger - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
+📥 [GET] /swagger-ui/json - 开始处理
+❌ 全局错误捕获: NotFoundError: /swagger-ui/json Not Found
+    at notFound (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:137:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/dist/middleware/report.middleware.js:13:13
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+info@3.20.13/node_modules/@midwayjs/info/dist/middleware/info.middleware.js:35:24
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+i18n@3.20.13/node_modules/@midwayjs/i18n/dist/middleware.js:150:17
+    at async bodyParser (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/koa-bodyparser@4.4.1/node_modules/koa-bodyparser/index.js:78:5)
+    at async session (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+session@3.20.11/node_modules/@midwayjs/session/dist/middleware/session.js:137:17)
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:273:40
+    at async /Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+core@3.20.11/node_modules/@midwayjs/core/dist/baseFramework.js:267:24
+    at async midwayRootMiddleware (/Users/shenhongshi/Documents/GitHub/gateway/midway-ts-server/node_modules/.pnpm/@midwayjs+koa@3.20.13/node_modules/@midwayjs/koa/dist/framework.js:143:13) {
+  code: '404',
+  cause: undefined,
+  status: 404
+}
