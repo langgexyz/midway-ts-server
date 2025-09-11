@@ -1,324 +1,11 @@
-import { Controller, Get, Post, Put, Del, Patch, Head, Options } from '@midwayjs/core';
+import { Controller, Get, Head } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBody } from '@midwayjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiQuery } from '@midwayjs/swagger';
 
-@ApiTags('API')
+@ApiTags('系统API')
 @Controller('/api')
 export class ApiController {
   
-  /**
-   * GET /api/users - 获取用户列表
-   */
-  @ApiOperation({ summary: '获取用户列表', description: '返回所有用户信息' })
-  @ApiQuery({ name: 'page', required: false, description: '页码', example: 1 })
-  @ApiQuery({ name: 'limit', required: false, description: '每页数量', example: 10 })
-  @ApiResponse({ status: 200, description: '成功获取用户列表' })
-  @Get('/users')
-  async getUsers(ctx: Context) {
-    const page = Number(ctx.query.page) || 1;
-    const limit = Number(ctx.query.limit) || 10;
-    
-    const users = [
-      { id: 1, name: '张三', email: 'zhangsan@example.com', age: 25 },
-      { id: 2, name: '李四', email: 'lisi@example.com', age: 30 },
-      { id: 3, name: '王五', email: 'wangwu@example.com', age: 28 }
-    ];
-    
-    ctx.body = {
-      success: true,
-      data: {
-        users: users.slice((page - 1) * limit, page * limit),
-        pagination: {
-          page,
-          limit,
-          total: users.length,
-          pages: Math.ceil(users.length / limit)
-        }
-      },
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  /**
-   * GET /api/users/:id - 获取单个用户
-   */
-  @ApiOperation({ summary: '获取单个用户', description: '根据ID获取用户信息' })
-  @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiResponse({ status: 200, description: '成功获取用户信息' })
-  @ApiResponse({ status: 404, description: '用户不存在' })
-  @Get('/users/:id')
-  async getUser(ctx: Context) {
-    const id = Number(ctx.params.id);
-    
-    if (id === 1) {
-      ctx.body = {
-        success: true,
-        data: {
-          id,
-          name: '张三',
-          email: 'zhangsan@example.com',
-          age: 25,
-          profile: {
-            bio: '软件工程师',
-            location: '北京',
-            website: 'https://zhangsan.dev'
-          }
-        },
-        timestamp: new Date().toISOString()
-      };
-    } else {
-      ctx.status = 404;
-      ctx.body = {
-        success: false,
-        message: '用户不存在',
-        timestamp: new Date().toISOString()
-      };
-    }
-  }
-
-  /**
-   * POST /api/users - 创建用户
-   */
-  @ApiOperation({ summary: '创建用户', description: '创建新用户' })
-  @ApiBody({
-    description: '用户信息',
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '新用户' },
-        email: { type: 'string', example: 'newuser@example.com' },
-        age: { type: 'number', example: 25 }
-      },
-      required: ['name', 'email']
-    }
-  })
-  @ApiResponse({ status: 201, description: '用户创建成功' })
-  @ApiResponse({ status: 400, description: '请求参数错误' })
-  @Post('/users')
-  async createUser(ctx: Context) {
-    const body = ctx.request.body as any;
-    const { name, email, age } = body;
-    
-    if (!name || !email) {
-      ctx.status = 400;
-      ctx.body = {
-        success: false,
-        message: '姓名和邮箱是必填项',
-        timestamp: new Date().toISOString()
-      };
-      return;
-    }
-    
-    const newUser = {
-      id: Date.now(),
-      name,
-      email,
-      age: age || 0,
-      createdAt: new Date().toISOString()
-    };
-    
-    ctx.status = 201;
-    ctx.body = {
-      success: true,
-      data: newUser,
-      message: '用户创建成功',
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  /**
-   * PUT /api/users/:id - 更新用户
-   */
-  @ApiOperation({ summary: '更新用户', description: '更新指定用户信息' })
-  @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiBody({
-    description: '更新的用户信息',
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '更新后的姓名' },
-        email: { type: 'string', example: 'updated@example.com' },
-        age: { type: 'number', example: 26 }
-      }
-    }
-  })
-  @ApiResponse({ status: 200, description: '用户更新成功' })
-  @ApiResponse({ status: 404, description: '用户不存在' })
-  @Put('/users/:id')
-  async updateUser(ctx: Context) {
-    const id = Number(ctx.params.id);
-    const body = ctx.request.body as any;
-    const { name, email, age } = body;
-    
-    if (id === 1) {
-      ctx.body = {
-        success: true,
-        data: {
-          id,
-          name: name || '张三',
-          email: email || 'zhangsan@example.com',
-          age: age || 25,
-          updatedAt: new Date().toISOString()
-        },
-        message: '用户更新成功',
-        timestamp: new Date().toISOString()
-      };
-    } else {
-      ctx.status = 404;
-      ctx.body = {
-        success: false,
-        message: '用户不存在',
-        timestamp: new Date().toISOString()
-      };
-    }
-  }
-
-  /**
-   * DELETE /api/users/:id - 删除用户
-   */
-  @ApiOperation({ summary: '删除用户', description: '删除指定用户' })
-  @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiResponse({ status: 200, description: '用户删除成功' })
-  @ApiResponse({ status: 404, description: '用户不存在' })
-  @Del('/users/:id')
-  async deleteUser(ctx: Context) {
-    const id = Number(ctx.params.id);
-    
-    if (id === 1) {
-      ctx.body = {
-        success: true,
-        message: '用户删除成功',
-        timestamp: new Date().toISOString()
-      };
-    } else {
-      ctx.status = 404;
-      ctx.body = {
-        success: false,
-        message: '用户不存在',
-        timestamp: new Date().toISOString()
-      };
-    }
-  }
-
-  /**
-   * PATCH /api/users/:id - 部分更新用户
-   */
-  @ApiOperation({ summary: '部分更新用户', description: '部分更新用户信息' })
-  @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiBody({
-    description: '部分更新的用户信息',
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '新姓名' }
-      }
-    }
-  })
-  @ApiResponse({ status: 200, description: '用户部分更新成功' })
-  @Patch('/users/:id')
-  async patchUser(ctx: Context) {
-    const id = Number(ctx.params.id);
-    const updates = ctx.request.body as any;
-    
-    ctx.body = {
-      success: true,
-      data: {
-        id,
-        ...updates,
-        updatedAt: new Date().toISOString()
-      },
-      message: '用户部分更新成功',
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  /**
-   * GET /api/posts - 获取文章列表
-   */
-  @ApiOperation({ summary: '获取文章列表', description: '返回所有文章' })
-  @ApiQuery({ name: 'category', required: false, description: '文章分类' })
-  @ApiQuery({ name: 'status', required: false, description: '文章状态', enum: ['draft', 'published', 'archived'] })
-  @ApiResponse({ status: 200, description: '成功获取文章列表' })
-  @Get('/posts')
-  async getPosts(ctx: Context) {
-    const { category, status } = ctx.query;
-    
-    const posts = [
-      { id: 1, title: '文章1', content: '这是第一篇文章', category: 'tech', status: 'published', authorId: 1 },
-      { id: 2, title: '文章2', content: '这是第二篇文章', category: 'life', status: 'draft', authorId: 2 },
-      { id: 3, title: '文章3', content: '这是第三篇文章', category: 'tech', status: 'published', authorId: 1 }
-    ];
-    
-    let filteredPosts = posts;
-    if (category) {
-      filteredPosts = filteredPosts.filter(post => post.category === category);
-    }
-    if (status) {
-      filteredPosts = filteredPosts.filter(post => post.status === status);
-    }
-    
-    ctx.body = {
-      success: true,
-      data: {
-        posts: filteredPosts,
-        filters: { category, status }
-      },
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  /**
-   * POST /api/posts - 创建文章
-   */
-  @ApiOperation({ summary: '创建文章', description: '创建新文章' })
-  @ApiBody({
-    description: '文章信息',
-    schema: {
-      type: 'object',
-      properties: {
-        title: { type: 'string', example: '新文章标题' },
-        content: { type: 'string', example: '文章内容' },
-        category: { type: 'string', example: 'tech' },
-        authorId: { type: 'number', example: 1 }
-      },
-      required: ['title', 'content', 'authorId']
-    }
-  })
-  @ApiResponse({ status: 201, description: '文章创建成功' })
-  @Post('/posts')
-  async createPost(ctx: Context) {
-    const body = ctx.request.body as any;
-    const { title, content, category, authorId } = body;
-    
-    if (!title || !content || !authorId) {
-      ctx.status = 400;
-      ctx.body = {
-        success: false,
-        message: '标题、内容和作者ID是必填项',
-        timestamp: new Date().toISOString()
-      };
-      return;
-    }
-    
-    const newPost = {
-      id: Date.now(),
-      title,
-      content,
-      category: category || 'general',
-      status: 'draft',
-      authorId,
-      createdAt: new Date().toISOString()
-    };
-    
-    ctx.status = 201;
-    ctx.body = {
-      success: true,
-      data: newPost,
-      message: '文章创建成功',
-      timestamp: new Date().toISOString()
-    };
-  }
-
   /**
    * GET /api/health - 健康检查
    */
@@ -332,7 +19,12 @@ export class ApiController {
         status: 'healthy',
         uptime: process.uptime(),
         timestamp: new Date().toISOString(),
-        version: '1.0.0'
+        version: '1.0.0',
+        services: {
+          database: 'connected',
+          cache: 'connected',
+          gateway: 'available'
+        }
       }
     };
   }
@@ -341,6 +33,7 @@ export class ApiController {
    * HEAD /api/status - 状态检查
    */
   @ApiOperation({ summary: '状态检查', description: 'HEAD方法状态检查' })
+  @ApiResponse({ status: 200, description: 'OK' })
   @Head('/status')
   async status(ctx: Context) {
     ctx.status = 200;
@@ -349,32 +42,44 @@ export class ApiController {
   }
 
   /**
-   * OPTIONS /api/users - 获取用户资源选项
+   * GET /api/search - 全局搜索
    */
-  @ApiOperation({ summary: '获取用户资源选项', description: 'OPTIONS方法获取允许的HTTP方法' })
-  @Options('/users')
-  async userOptions(ctx: Context) {
-    ctx.status = 200;
-    ctx.set('Allow', 'GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS');
-    ctx.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS');
-    ctx.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    ctx.body = {
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-      description: '用户资源支持的操作'
-    };
-  }
-
-  /**
-   * GET /api/search - 搜索接口（复杂查询参数）
-   */
-  @ApiOperation({ summary: '搜索', description: '复杂搜索接口，支持多种查询参数' })
-  @ApiQuery({ name: 'q', required: true, description: '搜索关键词' })
-  @ApiQuery({ name: 'type', required: false, description: '搜索类型', enum: ['user', 'post', 'all'] })
-  @ApiQuery({ name: 'sort', required: false, description: '排序方式', enum: ['relevance', 'date', 'name'] })
-  @ApiQuery({ name: 'order', required: false, description: '排序顺序', enum: ['asc', 'desc'] })
+  @ApiOperation({ summary: '全局搜索', description: '跨模块搜索用户、订单、文章等' })
+  @ApiQuery({ name: 'q', required: true, description: '搜索关键词', example: 'iPhone' })
+  @ApiQuery({ 
+    name: 'type', 
+    required: false, 
+    description: '搜索类型',
+    schema: {
+      enum: ['user', 'order', 'post', 'all'],
+      type: 'string'
+    },
+    example: 'all'
+  })
+  @ApiQuery({ 
+    name: 'sort', 
+    required: false, 
+    description: '排序方式',
+    schema: {
+      enum: ['relevance', 'date', 'name', 'amount'],
+      type: 'string'
+    },
+    example: 'relevance'
+  })
+  @ApiQuery({ 
+    name: 'order', 
+    required: false, 
+    description: '排序顺序',
+    schema: {
+      enum: ['asc', 'desc'],
+      type: 'string'
+    },
+    example: 'desc'
+  })
   @ApiQuery({ name: 'page', required: false, description: '页码', example: 1 })
   @ApiQuery({ name: 'limit', required: false, description: '每页数量', example: 10 })
   @ApiResponse({ status: 200, description: '搜索成功' })
+  @ApiResponse({ status: 400, description: '搜索关键词不能为空' })
   @Get('/search')
   async search(ctx: Context) {
     const { q, type = 'all', sort = 'relevance', order = 'desc', page = 1, limit = 10 } = ctx.query;
@@ -384,32 +89,63 @@ export class ApiController {
       ctx.body = {
         success: false,
         message: '搜索关键词不能为空',
+        data: null,
         timestamp: new Date().toISOString()
       };
       return;
     }
     
-    const results = {
-      query: q,
-      type,
-      sort,
-      order,
-      pagination: {
-        page: Number(page),
-        limit: Number(limit),
-        total: 25,
-        pages: 3
-      },
-      results: [
-        { id: 1, title: `搜索结果1: ${q}`, type: 'post', score: 0.95 },
-        { id: 2, title: `搜索结果2: ${q}`, type: 'user', score: 0.87 },
-        { id: 3, title: `搜索结果3: ${q}`, type: 'post', score: 0.82 }
+    // 模拟跨模块搜索结果
+    const searchResults = {
+      users: [
+        { id: 1, name: '张三', email: 'zhangsan@example.com', relevance: 0.95 },
+        { id: 2, name: '李四', email: 'lisi@example.com', relevance: 0.78 }
+      ],
+      orders: [
+        { id: 1001, productName: 'MacBook Pro', amount: 12999.00, relevance: 0.89 },
+        { id: 1002, productName: 'iPhone 15', amount: 8999.00, relevance: 0.92 }
+      ],
+      posts: [
+        { id: 1, title: 'Gateway架构设计', category: 'tech', relevance: 0.84 },
+        { id: 2, title: 'MidwayJS实践', category: 'tech', relevance: 0.76 }
       ]
     };
     
+    let results;
+    if (type === 'user') {
+      results = searchResults.users.map(u => ({ ...u, type: 'user' }));
+    } else if (type === 'order') {
+      results = searchResults.orders.map(o => ({ ...o, type: 'order' }));
+    } else if (type === 'post') {
+      results = searchResults.posts.map(p => ({ ...p, type: 'post' }));
+    } else {
+      results = [
+        ...searchResults.users.map(u => ({ ...u, type: 'user' })),
+        ...searchResults.orders.map(o => ({ ...o, type: 'order' })),
+        ...searchResults.posts.map(p => ({ ...p, type: 'post' }))
+      ];
+    }
+    
+    // 简单排序
+    if (sort === 'relevance') {
+      results.sort((a, b) => order === 'desc' ? b.relevance - a.relevance : a.relevance - b.relevance);
+    }
+    
     ctx.body = {
       success: true,
-      data: results,
+      data: {
+        query: q,
+        type,
+        sort,
+        order,
+        results: results.slice((Number(page) - 1) * Number(limit), Number(page) * Number(limit)),
+        pagination: {
+          page: Number(page),
+          limit: Number(limit),
+          total: results.length,
+          pages: Math.ceil(results.length / Number(limit))
+        }
+      },
       timestamp: new Date().toISOString()
     };
   }
