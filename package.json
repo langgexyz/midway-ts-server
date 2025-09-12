@@ -41,6 +41,10 @@
     "koa": "^2.13.1",
     "openapi-ts-sdk": "file:../openapi-ts-sdk",
     "tslib": "^2.8.1",
+    "ts-concurrency": "https://github.com/langgexyz/ts-concurrency#semver:^0.2.0",
+    "ts-streamclient": "https://github.com/langgexyz/ts-streamclient#semver:^2.0.0",
+    "ts-xutils": "https://github.com/langgexyz/ts-xutils#semver:^0.4.0",
+    "ts-json": "https://github.com/langgexyz/ts-json#semver:^0.2.0",
     "ws": "^8.14.2",
     "yaml": "^2.3.4"
   },
@@ -55,7 +59,6 @@
     "jest": "^29.2.2",
     "mwts": "^1.0.5",
     "ts-jest": "^29.4.1",
-    "ts-json": "github:xpwu/ts-json#semver:^0.2.x",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"
   },
