@@ -23,7 +23,7 @@ const CONFIG = {
     wsUrl: 'ws://localhost:18443'
   },
   generator: {
-    packagePath: '../ts-sdk-client-generator',
+    packagePath: '../openapi-ts-sdk-cli',
     outputDir: './generated-sdk'
   }
 };
