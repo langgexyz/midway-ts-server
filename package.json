@@ -39,7 +39,7 @@
     "cross-env": "^7.0.3",
     "fs-extra": "^11.1.1",
     "koa": "^2.13.1",
-    "openapi-ts-sdk": "file:../openapi-ts-sdk",
+    "openapi-ts-sdk": "https://github.com/langgexyz/openapi-ts-sdk.git#semver:^1.0.0",
     "tslib": "^2.8.1",
     "ts-concurrency": "https://github.com/langgexyz/ts-concurrency#semver:^0.2.0",
     "ts-streamclient": "https://github.com/langgexyz/ts-streamclient#semver:^2.0.0",
