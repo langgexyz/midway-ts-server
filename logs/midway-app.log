@@ -1,8 +1,0 @@
-🔧 MidwayJS 容器初始化完成
-🧪 系统性测试服务已就绪
-📚 Swagger 文档地址 (注解自动生成):
-   📄 JSON 规范: http://localhost:7001/swagger-ui/index.json
-   🌐 UI 界面: http://localhost:7001/swagger-ui/index.html
-2025-09-11 15:43:43.069 INFO 25525 [midway:bootstrap] current app started
-🚀 MidwayJS 测试服务启动成功
-📊 访问 http://localhost:7001 开始系统测试
