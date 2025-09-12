@@ -2,7 +2,7 @@
  * 覆盖率测试
  */
 
-import { recordToMap, mapToRecord } from 'ts-sdk-client';
+import { recordToMap, mapToRecord } from 'openapi-ts-sdk';
 
 describe('Coverage Test', () => {
   it('should test header converter functions', () => {

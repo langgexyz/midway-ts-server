@@ -6,7 +6,7 @@ import {
   HttpBuilder, 
   HttpMethod, 
   Headers
-} from 'ts-sdk-client';
+} from 'openapi-ts-sdk';
 
 // 测试抽象类 HttpBuilder 的功能
 class TestHttpBuilder extends HttpBuilder {

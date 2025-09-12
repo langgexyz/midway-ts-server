@@ -185,7 +185,7 @@ async function getOpenApiJson() {
 
 // 步骤3: 生成 SDK
 async function generateSDK(openApiPath) {
-  logStep(3, '使用 ts-sdk-client-generator 生成 SDK');
+  logStep(3, '使用 openapi-ts-sdk-cli 生成 SDK');
   
   try {
     const generatorPath = path.resolve(CONFIG.generator.packagePath);

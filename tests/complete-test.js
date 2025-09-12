@@ -25,7 +25,7 @@ const CONFIG = {
     port: 7001
   },
   generator: {
-    packagePath: '../ts-sdk-client-generator',
+    packagePath: '../openapi-ts-sdk-cli',
     outputDir: './generated-sdk'
   }
 };
