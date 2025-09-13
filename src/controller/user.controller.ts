@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Put, Del, Patch } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBody } from '@midwayjs/swagger';
+// 移除未使用的类型导入
 
 @ApiTags('用户管理')
 @Controller('/api/users')

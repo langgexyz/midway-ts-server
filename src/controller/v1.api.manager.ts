@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Del, Patch } from '@midwayjs/core';
+import { Controller, Get, Put } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBody } from '@midwayjs/swagger';
 
@@ -106,7 +106,7 @@ export class V1UserController {
     // 字段筛选
     if (fields) {
       const selectedFields = (fields as string).split(',');
-      const filteredContent = {};
+      const filteredContent: any = {};
       selectedFields.forEach(field => {
         if (profileData.content[field] !== undefined) {
           filteredContent[field] = profileData.content[field];

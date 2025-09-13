@@ -77,7 +77,8 @@ export class ProductService {
     
     // 品牌筛选
     if (brand) {
-      filteredProducts = filteredProducts.filter(p => p.brand.includes(brand));
+      const brandStr = Array.isArray(brand) ? brand[0] : brand;
+      filteredProducts = filteredProducts.filter(p => p.brand.includes(brandStr));
     }
     
     // 价格筛选
