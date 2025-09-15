@@ -4,8 +4,7 @@
 
 import { 
   HttpBuilder, 
-  HttpMethod, 
-  Headers
+  HttpMethod
 } from 'openapi-ts-sdk';
 
 // 测试抽象类 HttpBuilder 的功能

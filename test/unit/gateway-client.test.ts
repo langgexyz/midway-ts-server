@@ -121,8 +121,9 @@ describe('Gateway Client Tests', () => {
       const result = await client.sendRaw('API/Raw', rawData, headers);
       
       expect(result).toContain('"success":true');
-      expect(result).toContain('"name":"test"');
-      expect(result).toContain('"value":123');
+      // 检查转义后的JSON字符串格式
+      expect(result).toContain('"received":"{\\"name\\":\\"test\\",\\"value\\":123}"');
+      expect(result).toContain('"command":"API/Raw"');
       
       const callLog = client.getCallLog();
       expect(callLog).toHaveLength(1);

@@ -2,7 +2,8 @@
  * Gateway 集成测试
  */
 
-import { GatewayHttpBuilder, HttpMethod } from 'openapi-ts-sdk';
+import { HttpMethod } from 'openapi-ts-sdk';
+import { GatewayHttpBuilder } from 'openapi-ts-sdk-gateway';
 
 // Mock Gateway Client
 class MockGatewayClient {

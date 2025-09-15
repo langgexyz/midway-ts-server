@@ -2,7 +2,9 @@
  * HTTP Builder 单元测试
  */
 
-import { FetchHttpBuilder, GatewayHttpBuilder, HttpMethod } from 'openapi-ts-sdk';
+import { HttpMethod } from 'openapi-ts-sdk';
+import { FetchHttpBuilder } from 'openapi-ts-sdk-fetch';
+import { GatewayHttpBuilder } from 'openapi-ts-sdk-gateway';
 
 // Mock fetch
 global.fetch = jest.fn();
