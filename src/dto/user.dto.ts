@@ -94,6 +94,42 @@ export class CreateUserRequest {
   addresses?: UserAddress[];
 }
 
+// 更新用户请求 DTO
+export class UpdateUserRequest {
+  @ApiProperty({ description: '用户姓名', example: '更新后的姓名', required: false })
+  name?: string;
+
+  @ApiProperty({ description: '用户邮箱', example: 'updated@example.com', required: false })
+  email?: string;
+
+  @ApiProperty({ description: '用户年龄', example: 26, required: false })
+  age?: number;
+
+  @ApiProperty({ description: '用户标签', type: [String], example: ['更新用户'], required: false })
+  tags?: string[];
+
+  @ApiProperty({ description: '用户权限', type: [String], example: ['read', 'write'], required: false })
+  permissions?: string[];
+}
+
+// 部分更新用户请求 DTO
+export class PatchUserRequest {
+  @ApiProperty({ description: '用户姓名', example: '新姓名', required: false })
+  name?: string;
+
+  @ApiProperty({ description: '用户邮箱', example: 'patched@example.com', required: false })
+  email?: string;
+
+  @ApiProperty({ description: '用户年龄', example: 27, required: false })
+  age?: number;
+
+  @ApiProperty({ description: '用户标签', type: [String], example: ['部分更新'], required: false })
+  tags?: string[];
+
+  @ApiProperty({ description: '用户权限', type: [String], example: ['admin'], required: false })
+  permissions?: string[];
+}
+
 // 批量操作请求 DTO
 export class BatchUserRequest {
   @ApiProperty({ description: '用户ID列表', type: [Number], example: [1, 2, 3] })
@@ -104,6 +140,35 @@ export class BatchUserRequest {
 
   @ApiProperty({ description: '操作参数', required: false })
   params?: Record<string, any>;
+}
+
+export class PaginationInfo {
+  @ApiProperty({ description: '当前页码', example: 1 })
+  page: number;
+
+  @ApiProperty({ description: '每页数量', example: 10 })
+  limit: number;
+
+  @ApiProperty({ description: '总记录数', example: 100 })
+  total: number;
+
+  @ApiProperty({ description: '总页数', example: 10 })
+  pages: number;
+}
+
+export class UserListData {
+  @ApiProperty({ description: '用户列表', type: [ExtendedUserInfo] })
+  users: ExtendedUserInfo[];
+
+  @ApiProperty({ description: '分页信息', type: () => PaginationInfo })
+  pagination: PaginationInfo;
+
+  @ApiProperty({ description: '统计信息', required: false })
+  stats?: {
+    totalActive: number;
+    totalInactive: number;
+    averageAge: number;
+  };
 }
 
 // 用户列表响应 DTO
@@ -122,35 +187,6 @@ export class UserListResponse {
 
   @ApiProperty({ description: '响应时间戳', example: '2024-01-01T00:00:00.000Z' })
   timestamp: string;
-}
-
-export class UserListData {
-  @ApiProperty({ description: '用户列表', type: [ExtendedUserInfo] })
-  users: ExtendedUserInfo[];
-
-  @ApiProperty({ description: '分页信息', type: () => PaginationInfo })
-  pagination: PaginationInfo;
-
-  @ApiProperty({ description: '统计信息', required: false })
-  stats?: {
-    totalActive: number;
-    totalInactive: number;
-    averageAge: number;
-  };
-}
-
-export class PaginationInfo {
-  @ApiProperty({ description: '当前页码', example: 1 })
-  page: number;
-
-  @ApiProperty({ description: '每页数量', example: 10 })
-  limit: number;
-
-  @ApiProperty({ description: '总记录数', example: 100 })
-  total: number;
-
-  @ApiProperty({ description: '总页数', example: 10 })
-  pages: number;
 }
 
 // 用户搜索请求 DTO

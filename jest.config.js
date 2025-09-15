@@ -10,11 +10,8 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(ts-json)/)'
+    'node_modules/'
   ],
-  moduleNameMapper: {
-    '^ts-json$': '<rootDir>/node_modules/ts-json/src/json.ts'
-  },
   collectCoverageFrom: [
     '../ts-sdk-client/src/**/*.ts',
     '../gateway-ts-sdk/src/**/*.ts',

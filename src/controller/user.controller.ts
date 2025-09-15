@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Del, Patch } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBody } from '@midwayjs/swagger';
-// 移除未使用的类型导入
+import { CreateUserRequest, UpdateUserRequest, PatchUserRequest, UserInfo } from '../dto/user.dto';
 
 @ApiTags('用户管理')
 @Controller('/api/users')
@@ -81,25 +81,13 @@ export class UserController {
    * POST /api/users - 创建用户
    */
   @ApiOperation({ summary: '创建用户', description: '创建新用户' })
-  @ApiBody({
-    description: '用户信息',
-    required: true,
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '新用户' },
-        email: { type: 'string', example: 'newuser@example.com' },
-        age: { type: 'number', example: 25 }
-      },
-      required: ['name', 'email']
-    }
-  })
+  @ApiBody({ type: CreateUserRequest })
   @ApiResponse({ status: 201, description: '用户创建成功' })
   @ApiResponse({ status: 400, description: '请求参数错误' })
   @Post('/')
   async createUser(ctx: Context) {
-    const body = ctx.request.body as any;
-    const { name, email, age } = body;
+    const body = ctx.request.body as CreateUserRequest;
+    const { name, email, age, tags, permissions } = body;
     
     if (!name || !email) {
       ctx.status = 400;
@@ -112,11 +100,13 @@ export class UserController {
       return;
     }
     
-    const newUser = {
+    const newUser: UserInfo = {
       id: Date.now(),
       name,
       email,
       age: age || 18,
+      tags: tags || [],
+      permissions: permissions || ['read'],
       createdAt: new Date().toISOString()
     };
     
@@ -134,30 +124,27 @@ export class UserController {
    */
   @ApiOperation({ summary: '更新用户', description: '更新指定用户信息' })
   @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiBody({
-    description: '更新的用户信息',
-    required: true,
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '更新后的姓名' },
-        email: { type: 'string', example: 'updated@example.com' },
-        age: { type: 'number', example: 26 }
-      }
-    }
-  })
+  @ApiBody({ type: UpdateUserRequest })
   @ApiResponse({ status: 200, description: '用户更新成功' })
   @ApiResponse({ status: 404, description: '用户不存在' })
   @Put('/:id')
   async updateUser(ctx: Context) {
     const id = Number(ctx.params.id);
-    const body = ctx.request.body as any;
-    const { name, email, age } = body;
+    const body = ctx.request.body as UpdateUserRequest;
+    const { name, email, age, tags, permissions } = body;
     
     ctx.body = {
       success: true,
       message: '用户更新成功',
-      data: { id, name, email, age, updatedAt: new Date().toISOString() },
+      data: { 
+        id, 
+        name, 
+        email, 
+        age, 
+        tags: tags || [], 
+        permissions: permissions || ['read'],
+        updatedAt: new Date().toISOString() 
+      },
       timestamp: new Date().toISOString()
     };
   }
@@ -186,26 +173,26 @@ export class UserController {
    */
   @ApiOperation({ summary: '部分更新用户', description: '部分更新用户信息' })
   @ApiParam({ name: 'id', description: '用户ID', example: 1 })
-  @ApiBody({
-    description: '部分更新的用户信息',
-    required: true,
-    schema: {
-      type: 'object',
-      properties: {
-        name: { type: 'string', example: '新姓名' }
-      }
-    }
-  })
+  @ApiBody({ type: PatchUserRequest })
   @ApiResponse({ status: 200, description: '用户部分更新成功' })
   @Patch('/:id')
   async patchUser(ctx: Context) {
     const id = Number(ctx.params.id);
-    const updates = ctx.request.body as any;
+    const updates = ctx.request.body as PatchUserRequest;
+    const { name, email, age, tags, permissions } = updates;
     
     ctx.body = {
       success: true,
       message: '用户部分更新成功',
-      data: { id, ...updates, updatedAt: new Date().toISOString() },
+      data: { 
+        id, 
+        ...(name && { name }),
+        ...(email && { email }),
+        ...(age && { age }),
+        ...(tags && { tags }),
+        ...(permissions && { permissions }),
+        updatedAt: new Date().toISOString() 
+      },
       timestamp: new Date().toISOString()
     };
   }

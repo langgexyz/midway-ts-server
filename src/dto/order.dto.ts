@@ -130,20 +130,6 @@ export class OrderStats {
 }
 
 // 订单列表响应
-export class OrderListResponse {
-  @ApiProperty({ description: '操作是否成功', example: true })
-  success: boolean;
-
-  @ApiProperty({ description: '响应消息', example: '获取订单列表成功' })
-  message: string;
-
-  @ApiProperty({ description: '订单数据', type: () => OrderListData })
-  data: OrderListData;
-
-  @ApiProperty({ description: '响应时间戳', example: '2024-01-01T00:00:00.000Z' })
-  timestamp: string;
-}
-
 export class OrderListData {
   @ApiProperty({ description: '订单列表', type: [OrderInfo] })
   orders: OrderInfo[];
@@ -188,4 +174,19 @@ export class OrderSearchRequest {
     startDate?: string;
     endDate?: string;
   };
+}
+
+// 订单列表响应
+export class OrderListResponse {
+  @ApiProperty({ description: '操作是否成功', example: true })
+  success: boolean;
+
+  @ApiProperty({ description: '响应消息', example: '获取订单列表成功' })
+  message: string;
+
+  @ApiProperty({ description: '订单数据', type: () => OrderListData })
+  data: OrderListData;
+
+  @ApiProperty({ description: '响应时间戳', example: '2024-01-01T00:00:00.000Z' })
+  timestamp: string;
 }

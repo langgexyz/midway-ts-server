@@ -3,7 +3,7 @@
  * 验证 getHeader() 方法能正确返回 Map<string, string> 格式的头部信息
  */
 
-// 模拟 ts-json 的 Json 类
+// 模拟 JSON 序列化/反序列化的 Json 类
 class Json {
   toJson(obj: any): string {
     return JSON.stringify(obj);
@@ -14,7 +14,7 @@ class Json {
       const data = JSON.parse(jsonString);
       const instance = new targetClass();
       
-      // 模拟 ts-json 的行为：将 JSON 对象的属性复制到类实例
+      // 模拟 JSON 反序列化的行为：将 JSON 对象的属性复制到类实例
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const value = data[key];
