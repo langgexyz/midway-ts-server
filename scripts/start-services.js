@@ -12,15 +12,15 @@ const fs = require('fs');
 const execAsync = promisify(exec);
 
 async function startServices() {
-  console.log('🚀 启动测试服务...');
+  console.log('Starting test services...');
   
   try {
     // 启动 Gateway Go Server
     await startGoServer();
     
-    console.log('✅ 所有服务启动完成');
+    console.log('All services started successfully');
   } catch (error) {
-    console.error('❌ 启动服务失败:', error);
+    console.error('Failed to start services:', error);
     process.exit(1);
   }
 }
@@ -34,17 +34,17 @@ async function startGoServer() {
   
   // 检查二进制文件是否存在
   if (!fs.existsSync(binaryPath)) {
-    console.log('📦 构建 Gateway Go Server...');
+    console.log('Building Gateway Go Server...');
     const { stdout, stderr } = await execAsync('make build', { cwd: goServerPath });
     if (stderr) {
       console.warn('构建警告:', stderr);
     }
-    console.log('✅ Gateway Go Server 构建完成');
+    console.log('Gateway Go Server build completed');
   }
   
   // 检查配置文件是否存在
   if (!fs.existsSync(configPath)) {
-    console.log('⚙️ 创建配置文件...');
+    console.log('Creating configuration file...');
     const defaultConfigPath = path.join(goServerPath, 'bin', 'config.json.default');
     if (fs.existsSync(defaultConfigPath)) {
       fs.copyFileSync(defaultConfigPath, configPath);
@@ -69,11 +69,11 @@ async function startGoServer() {
       };
       fs.writeFileSync(configPath, JSON.stringify(basicConfig, null, 2));
     }
-    console.log('✅ 配置文件创建完成');
+    console.log('Configuration file created successfully');
   }
   
   // 启动服务
-  console.log('🚀 启动 Gateway Go Server...');
+  console.log('Starting Gateway Go Server...');
   const goProcess = spawn(binaryPath, ['-config', configPath], {
     cwd: path.dirname(binaryPath),
     detached: true,
@@ -99,7 +99,7 @@ async function startGoServer() {
   // 等待服务启动
   await waitForGoServer();
   
-  console.log('✅ Gateway Go Server 启动完成');
+  console.log('Gateway Go Server started successfully');
 }
 
 async function waitForGoServer() {

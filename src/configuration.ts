@@ -27,10 +27,10 @@ export class ContainerLifeCycle {
     // add filter
     this.app.useFilter([DefaultErrorFilter]);
     
-    console.log('🔧 MidwayJS 容器初始化完成');
-    console.log('🧪 系统性测试服务已就绪');
-    console.log('📚 Swagger 文档地址 (注解自动生成):');
-    console.log('   📄 JSON 规范: http://localhost:7001/swagger-ui/index.json');
-    console.log('   🌐 UI 界面: http://localhost:7001/swagger-ui/index.html');
+    console.log('MidwayJS container initialization completed');
+    console.log('System testing service is ready');
+    console.log('Swagger documentation address (auto-generated from annotations):');
+    console.log('   JSON Specification: http://localhost:7001/swagger-ui/index.json');
+    console.log('   UI Interface: http://localhost:7001/swagger-ui/index.html');
   }
 }

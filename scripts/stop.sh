@@ -33,18 +33,18 @@ stop_service() {
             done
             
             if ps -p "$PID" > /dev/null 2>&1; then
-                echo -e "${YELLOW}⚠️  强制停止服务...${NC}"
+                echo -e "${YELLOW}Warning: Force stopping service...${NC}"
                 kill -9 "$PID"
             fi
             
             rm -f "$PID_FILE"
-            echo -e "${GREEN}✅ 服务已停止${NC}"
+            echo -e "${GREEN}Service stopped${NC}"
         else
-            echo -e "${YELLOW}⚠️  服务未运行，清理PID文件${NC}"
+            echo -e "${YELLOW}Warning: Service not running, cleaning PID file${NC}"
             rm -f "$PID_FILE"
         fi
     else
-        echo -e "${YELLOW}⚠️  未找到PID文件，服务可能未运行${NC}"
+        echo -e "${YELLOW}Warning: PID file not found, service may not be running${NC}"
     fi
 }
 
@@ -54,9 +54,9 @@ cleanup_processes() {
     # 查找并停止相关的 node 进程
     local pids=$(ps aux | grep "node.*bootstrap.js" | grep -v grep | awk '{print $2}')
     if [[ -n "$pids" ]]; then
-        echo -e "${YELLOW}⚠️  发现残留进程，正在清理...${NC}"
+        echo -e "${YELLOW}Warning: Found residual processes, cleaning up...${NC}"
         echo "$pids" | xargs kill -9 2>/dev/null || true
-        echo -e "${GREEN}✅ 残留进程已清理${NC}"
+        echo -e "${GREEN}Residual processes cleaned${NC}"
     fi
 }
 
@@ -69,7 +69,7 @@ main() {
     stop_service
     cleanup_processes
     
-    echo -e "${GREEN}🎉 服务停止完成！${NC}"
+    echo -e "${GREEN}Service stop completed!${NC}"
     echo -e "${BLUE}================================${NC}"
 }
 

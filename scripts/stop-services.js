@@ -14,9 +14,9 @@ async function stopServices() {
     // 停止 Gateway Go Server
     await stopGoServer();
     
-    console.log('✅ 所有服务已停止');
+    console.log('All services stopped successfully');
   } catch (error) {
-    console.error('❌ 停止服务失败:', error);
+    console.error('Failed to stop services:', error);
     process.exit(1);
   }
 }
@@ -41,7 +41,7 @@ async function stopGoServer() {
             retries--;
             if (retries <= 0) {
               // 强制杀死进程
-              console.log('⚠️ 强制停止进程...');
+              console.log('Warning: Force stopping process...');
               process.kill(pid, 'SIGKILL');
               clearInterval(checkInterval);
               resolve();
@@ -56,18 +56,18 @@ async function stopGoServer() {
       
       // 删除 PID 文件
       fs.unlinkSync(pidFile);
-      console.log('✅ Gateway Go Server 已停止');
+      console.log('Gateway Go Server stopped successfully');
     } catch (error) {
       if (error.code === 'ESRCH') {
         // 进程不存在，清理 PID 文件
         fs.unlinkSync(pidFile);
-        console.log('✅ Gateway Go Server 进程不存在，已清理');
+        console.log('Gateway Go Server process does not exist, cleaned up');
       } else {
         throw error;
       }
     }
   } else {
-    console.log('ℹ️ Gateway Go Server 未在运行');
+    console.log('Info: Gateway Go Server is not running');
   }
 }
 
